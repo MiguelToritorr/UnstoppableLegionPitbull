@@ -1,0 +1,74 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <include file="example.xml"/>
+    <!-- Configuration for the default package. -->
+      <!-- Clients. -->
+    <package name="default" extends="struts-default">
+        
+        <action name="RegClient" class="Conexion.clients" method="regClient" >
+            <result name="success">/JSP/dataClientC.jsp</result>
+            <result name="error">/JSP/error.jsp</result>
+        </action>
+        
+         <action name="dataCount" class="Conexion.clients" method="dataClient">
+            <result name="success">/JSP/dataClientC.jsp</result>
+            <result name="error">/JSP/error.jsp</result>
+        </action>
+        
+         <action name="delClient" class="Conexion.clients" method="deleteClient">
+            <result name="success">../JSP/principal_1.jsp</result>
+            <result name="error">/JSP/error.jsp</result>
+        </action>
+        
+        <action name="upDate" class="Conexion.clients" method="updatedataClients">
+            <result name="success">/JSP/dataClientC.jsp</result>
+            <result name="error">/JSP/error.jsp</result>
+        </action>
+        
+        <!-- log system-->
+        
+         <action name="loginUs" class="Conexion.log" method="InicioSesion" >
+            <result name="success">/JSP/principalClient.jsp</result>
+            <result name="successAdmin">/JSP/principalAdmin.jsp</result>
+            <result name="error">/JSP/error.jsp</result>
+        </action>
+        <action name="logOut" class="Conexion.log" method="outSession">
+            <result name="success">/JSP/principal.jsp</result>
+            <result name="error">/JSP/error.jsp</result>
+        </action>
+        <action name="logOutC" class="Conexion.log" method="outSession">
+            <result name="success">/JSP/principal.jsp</result>
+            <result name="error">/JSP/error.jsp</result>
+        </action>
+       
+        
+        <!-- admin. -->
+        <action name="dataC" class="Conexion.clients" method="dataClients">
+            <result name="success">/JSP/dataClients.jsp</result>
+            <result name="error">/JSP/error.jsp</result>
+        </action>
+
+        <action name="RegDogs" class="Conexion.dogs">
+            <result name="SUCCESS">/JSP/dataULP.jsp</result>
+            <result name="error">/JSP/error.jsp</result>
+        </action>
+        <action name="Image" class="Conexion.RetrieveIamges">
+            <result name="SUCCESS">/JSP/dataULP.jsp</result>
+        </action> 
+        
+        <action name="ImageP" class="Conexion.RetrieveIamges">
+            <result name="SUCCESS">/JSP/gallery.jsp</result>
+        </action>
+        
+        <action name="Image1" class="Conexion.RetrieveIamges">
+            <result name="SUCCESS">/JSP/galleryC.jsp</result>
+        </action>
+        
+        <!--Payment -->
+        
+      
+    </package>
+</struts>
